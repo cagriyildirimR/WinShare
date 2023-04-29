@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Screen Capture Stream</title>
+    <style>
+        #screenshot {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        function updateImage() {
+            var now = new Date();
+            var img = document.getElementById("screenshot");
+            img.src = "output.png?" + now.getTime();
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            setInterval(updateImage, 1000);
+        });
+    </script>
+</head>
+<body>
+    <img id="screenshot" src="output.png" alt="Screen Capture" />
+</body>
+</html>
